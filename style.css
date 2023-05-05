@@ -38,6 +38,7 @@ main {
   margin: 0 auto;
   max-width: 34rem;
   text-align: center;
+  animation: updown 1000ms;
 }
 
 .head__header {
@@ -65,6 +66,7 @@ main {
   grid-template-columns: repeat(3, minmax(20rem, 22rem));
   grid-template-rows: repeat(4, 7.2rem);
   gap: 2rem;
+  animation: downup 1000ms;
 }
 
 .card {
@@ -135,6 +137,7 @@ main {
     grid-template-columns: repeat(2, minmax(18rem, 20rem));
     grid-template-rows: repeat(2, 14.4rem);
     gap: 1.5rem;
+    animation: unset;
   }
 
   .card {
@@ -144,21 +147,25 @@ main {
   .card-green {
     grid-column: 1;
     grid-row: 1;
+    animation: leftright 800ms;
   }
 
   .card-red {
     grid-column: 2;
     grid-row: 1;
+    animation: rightleft 800ms;
   }
 
   .card-orange {
     grid-column: 1;
     grid-row: 2;
+    animation: leftright 800ms;
   }
 
   .card-blue {
     grid-column: 2;
     grid-row: 2;
+    animation: rightleft 800ms;
   }
 
   .card__title {
@@ -196,5 +203,40 @@ main {
 
   .head__title {
     font-size: 1.6rem;
+  }
+}
+
+/* Animations */
+
+@keyframes updown {
+  0% {
+    transform: translateY(-500px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+@keyframes downup {
+  0% {
+    transform: translateY(500px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+@keyframes leftright {
+  0% {
+    transform: translateX(-500px);
+  }
+  100% {
+    transform: translateX(0px);
+  }
+}
+@keyframes rightleft {
+  0% {
+    transform: translateX(500px);
+  }
+  100% {
+    transform: translateX(0px);
   }
 }
